@@ -10,7 +10,6 @@ async function fetchAndUpdateWeather(city) {
             `${WEATHER_API_ENDPOINT}&lat=${lat}&lon=${lon}`
         );
         const data2 = await response2.json();
-        console.log(data2);
 
         const currentWeather = new WeatherData(
             data2.current.temp,
@@ -31,7 +30,17 @@ async function fetchAndUpdateWeather(city) {
                 )
             );
         }
+
+        displayCurrentWeather(city, currentWeather);
     } catch(err) {
         throw err;
     }
+}
+
+function displayCurrentWeather(city, currentWeather) {
+    $("#weather-main-city-name").text(city);
+    $("#weather-main-temp").text(currentWeather.temp);
+    $("#weather-main-wind").text(currentWeather.wind);
+    $("#weather-main-humidity").text(currentWeather.humidity);
+    $("#weather-main-uvi").text(currentWeather.uvi);
 }
