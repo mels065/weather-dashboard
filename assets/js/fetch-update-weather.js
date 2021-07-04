@@ -15,21 +15,9 @@ async function fetchAndUpdateWeather(city) {
             data2.current.temp,
             data2.current,
             moment(),
+            data2.current.weather[0].icon
         );
-
-        const fiveDayForecast = [];
-        for (let i = 0; i < 5; i++) {
-            const daily = data2.daily;
-            let date = moment();
-            date = date.date(date.date() + i + 1);
-            fiveDayForecast.push(
-                new WeatherData(
-                    daily[i].temp.day,
-                    daily,
-                    date
-                )
-            );
-        }
+        console.log(data2)
 
         displayCurrentWeather(city, currentWeather);
     } catch(err) {
@@ -39,6 +27,8 @@ async function fetchAndUpdateWeather(city) {
 
 function displayCurrentWeather(city, currentWeather) {
     $("#weather-main-city-name").text(city);
+    $("#weather-main-date").text(currentWeather.date);
+    $("#weather-main-icon").attr("src", `${WEATHER_ICON}/${currentWeather.icon}`);
     $("#weather-main-temp").text(currentWeather.temp);
     $("#weather-main-wind").text(currentWeather.wind);
     $("#weather-main-humidity").text(currentWeather.humidity);

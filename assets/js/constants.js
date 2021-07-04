@@ -6,6 +6,8 @@ const GEOCODING_PARAMS = `.json?types=place&access_token=${GEOCODING_API_KEY}`
 const WEATHER_API_KEY = "f589dad99d08903972387439baab0191";
 const WEATHER_API_ENDPOINT = `https://api.openweathermap.org/data/2.5/onecall?appid=${WEATHER_API_KEY}&units=imperial`;
 
+// Icon
+const WEATHER_ICON = " http://openweathermap.org/img/wn/";
 
 // Date formats
 const DATE_FORMAT = "M/D/YYYY";
