@@ -1,0 +1,1 @@
+const searchHistory = new Set();

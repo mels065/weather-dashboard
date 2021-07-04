@@ -6,11 +6,13 @@ async function searchCity(event) {
 
     try {
         
-        // Add function for fetching and displaying data here
+       await fetchAndUpdateWeather(city);
         
         localStorage.setItem("city", city);
-        searchHistory.push(city);
-        localStorage.setItem("searchHistory", searchHistory);
+        searchHistory.add(city);
+        localStorage.setItem("searchHistory", JSON.stringify([...searchHistory]));
+    } catch(err) {
+        console.log(err);
     }
 }
 
