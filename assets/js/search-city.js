@@ -25,8 +25,9 @@ function displaySearchHistory() {
     } else {
         const ul = $("<ul></ul>")
         for (let i = searchHistory.size - 1; i >= 0; i--) {
-            const btn = $(`<button class="search">${[...searchHistory][i]}</button>`);
-            console.log(btn.html());
+            const city = [...searchHistory][i];
+            const btn = $(`<li><button class="search">${city}</button></li>`);
+            btn.click(() => { fetchAndUpdateWeather(city) });
             ul.append(btn);
         }
         $("#search-history").append(ul);
