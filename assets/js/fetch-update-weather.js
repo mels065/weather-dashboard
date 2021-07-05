@@ -15,7 +15,7 @@ async function fetchAndUpdateWeather(city) {
             data2.current.temp,
             data2.current,
             moment(),
-            data2.current.weather[0].icon
+            data2.current.weather[0]
         );
         console.log(data2)
 
@@ -29,6 +29,7 @@ function displayCurrentWeather(city, currentWeather) {
     $("#weather-main-city-name").text(city);
     $("#weather-main-date").text(currentWeather.date);
     $("#weather-main-icon").attr("src", `${WEATHER_ICON}/${currentWeather.icon}`);
+    $("#weather-main-icon").attr("alt", currentWeather.iconDescription);
     $("#weather-main-temp").text(currentWeather.temp);
     $("#weather-main-wind").text(currentWeather.wind);
     $("#weather-main-humidity").text(currentWeather.humidity);

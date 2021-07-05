@@ -1,11 +1,12 @@
 class WeatherData {
-    constructor(temp, current, date, icon) {
+    constructor(temp, current, date, iconData) {
         this.temp = temp;
         this.wind = current.wind_speed;
         this.humidity = current.humidity;
         this.uvi = current.uvi;
         this.date = this.formatDate(date);
-        this.icon = `${icon}.png`;
+        this.icon = `${iconData.icon}.png`;
+        this.iconDescription = iconData.description;
     }
 
     formatDate(date) {
