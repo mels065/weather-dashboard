@@ -10,6 +10,9 @@ async function searchCity(event) {
         
         localStorage.setItem("city", city);
         searchHistory.add(city);
+        if (size >= 10) {
+            searchHistory = new Set([...searchHistory].slice(1));
+        }
         localStorage.setItem("searchHistory", JSON.stringify([...searchHistory]));
         displaySearchHistory();
     } catch(err) {
