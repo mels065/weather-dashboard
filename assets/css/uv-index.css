@@ -1,16 +1,18 @@
 #weather-main-uvi {
-    color: white;
     padding: 2px;
 }
 
 .favorable {
     background-color: green;
+    color: white;
 }
 
 .moderate {
     background-color: yellow;
+    color: black;
 }
 
 .severe {
     background-color: red;
+    color: white;
 }
