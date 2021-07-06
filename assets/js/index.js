@@ -1,9 +1,15 @@
-const city = localStorage.getItem("city");
-const searchHistory = new Set(
-    JSON.parse(localStorage.getItem("searchHistory"))
-);
+let searchHistory;
 
-fetchAndUpdateWeather(city);
-displaySearchHistory();
+(async () => {
+    let city = localStorage.getItem("city");
+    if (city === null) city = "New York, NY";
+        
+    searchHistory = new Set(
+        JSON.parse(localStorage.getItem("searchHistory"))
+    );
 
-$("#search-city-form").submit(searchCity);
+    fetchAndUpdateWeather(city);
+    displaySearchHistory();
+
+    $("#search-city-form").submit(searchCity);
+})();
