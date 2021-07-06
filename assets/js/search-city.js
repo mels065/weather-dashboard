@@ -26,10 +26,10 @@ function displaySearchHistory() {
     if (size === 0) {
         $("#search-history").html("No search history at this time...");
     } else {
-        const ul = $("<ul></ul>")
+        const ul = $('<ul class="list-group"></ul>')
         for (let i = searchHistory.size - 1; i >= 0; i--) {
             const city = [...searchHistory][i];
-            const btn = $(`<li><button class="search">${city}</button></li>`);
+            const btn = $(`<button class="search btn btn-light">${city}</button>`);
             btn.click(() => { fetchAndUpdateWeather(city) });
             ul.append(btn);
         }

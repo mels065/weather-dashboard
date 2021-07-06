@@ -4,7 +4,9 @@
         <title>Weather Dashboard</title>
         <!--BOOTSTRAP-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/uv-index.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/forecast.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header class="text-center">
@@ -19,8 +21,8 @@
                 </form>
                 <div id="search-history"></div>
             </aside>
-            <main>
-                <section id="weather-main">
+            <div id="weather">
+                <section class="card" id="weather-main">
                     <h2 ><span id="weather-main-city-name"></span> (<span id="weather-main-date"></span>) <image id="weather-main-icon" /></h2>
                     <div class="data">Temp: <span id="weather-main-temp"></span>&deg; F</div>
                     <div class="data">Wind: <span id="weather-main-wind"></span> MPH</div>
@@ -31,7 +33,7 @@
                     <h2>5-day Forecast</h2>
                     <ul></ul>
                 </section>
-            </main>
+            </div>
         </main>
 
         <!--CDNs-->

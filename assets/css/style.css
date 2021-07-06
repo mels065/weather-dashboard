@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+header {
+    background: #17218a;
+    color: white;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+aside {
+    width: 30%;
+}
+
+aside * {
+    margin: 5px;
+}
+
+#weather {
+    width: 65%;
+}

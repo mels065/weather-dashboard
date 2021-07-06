@@ -59,7 +59,7 @@ function displayFiveDayForecast(fiveDayForecast) {
     $("#five-day-forecast ul").html("");
     fiveDayForecast.forEach((weather) => {
         const el = $(
-            `<li class="forecast-item>
+            `<li class="forecast-item">
                 <div class="date">${weather.date}</div>
                 <image class="icon" src=${getIconFile(weather.icon)} alt=${weather.description} />
                 <div class="temp">Temp: ${weather.temp}&deg; F</div>
