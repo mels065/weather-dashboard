@@ -46,7 +46,13 @@ function displayCurrentWeather(city, currentWeather) {
     $("#weather-main-temp").text(currentWeather.temp);
     $("#weather-main-wind").text(currentWeather.wind);
     $("#weather-main-humidity").text(currentWeather.humidity);
-    $("#weather-main-uvi").text(currentWeather.uvi);
+    const uvi = currentWeather.uvi;
+    const uviEl = $("#weather-main-uvi");
+    uviEl.text(uvi);
+    uviEl.removeClass();
+    if (uvi < 3) uviEl.addClass("favorable");
+    else if (uvi >= 3 && uvi < 8) uviEl.addClass("moderate");
+    else uviEl.addClass("severe");
 }
 
 function displayFiveDayForecast(fiveDayForecast) {
