@@ -8,8 +8,13 @@ let searchHistory;
         JSON.parse(localStorage.getItem("searchHistory"))
     );
 
-    fetchAndUpdateWeather(city);
+    await fetchAndUpdateWeather(city);
     displaySearchHistory();
 
     $("#search-city-form").submit(searchCity);
+
+    setInterval(() => {
+        fetchAndUpdateWeather(city);
+        displaySearchHistory();
+    }, 1000 * 60 * 5)
 })();
