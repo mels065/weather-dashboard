@@ -1,3 +1,4 @@
+// Used for organizing weather information
 class WeatherData {
     constructor(temp, current, date, iconData) {
         this.temp = temp;
