@@ -22,6 +22,6 @@ let searchHistory;
     // Every 5 minutes, get current weather
     // and display it
     setInterval(() => {
-        await fetchAndUpdateWeather(city);
+        fetchAndUpdateWeather(city);
     }, 1000 * 60 * 5)
 })();
