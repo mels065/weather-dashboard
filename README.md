@@ -17,3 +17,7 @@ https://mels065.github.io/weather-dashboard/
 MIT
 
 https://opensource.org/licenses/MIT
+
+## Contact
+
+You can reach me at mellusbrandon@gmail.com.
